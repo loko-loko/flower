@@ -2,7 +2,8 @@ btlewrap==0.0.4
 certifi==2019.6.16
 chardet==3.0.4
 idna==2.8
-# psycopg2==2.8.3
+psycopg2==2.8.3
 requests==2.22.0
 urllib3==1.25.3
 loguru==0.3.2
+PyYAML==5.1.2
