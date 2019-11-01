@@ -6,16 +6,17 @@
 
 import os
 import time
-import yaml
 import argparse
 from pprint import pprint, pformat
 
+import yaml
 from loguru import logger
 
 from lib_flower.logger import logger_init
-from lib_flower.virtualenv import VirtualEnv
-
-
+from lib_flower.jeedom_api import JeedomApi
+from lib_flower.flower import FlowerInfo
+from lib_flower.database import FlowerDataBase
+  
 def args_parse():
     
     parser = argparse.ArgumentParser()
@@ -75,20 +76,6 @@ def main():
     start_time = time.time()
     
     logger.info('[Script] o-> Flower Exec Start <-o')
-    
-    # Activate VENV #
-    
-    virtualenv = VirtualEnv(
-        BASE_DIR, PYTHON_BIN, REQUIREMENTS_F
-    )
-    virtualenv.create_venv(args.new_env)
-    virtualenv.activate_venv()
-    
-    # Import Lib need Venv #
-    
-    from lib_flower.jeedom_api import JeedomApi
-    from lib_flower.flower import FlowerInfo
-    from lib_flower.database import FlowerDataBase
     
     # Get Config Info #
     
