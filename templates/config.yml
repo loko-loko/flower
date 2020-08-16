@@ -1,0 +1,10 @@
+configs:
+  # Jeedom Info
+  jeedom_ip: "1.1.1.1"
+  jeedom_api_key: "XXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+  
+  # Flowers to collect
+  flowers: ["flower_1", "flower_2"]
+
+  # Exporter url
+  exporter_url: "http://127.0.0.1:9250"
