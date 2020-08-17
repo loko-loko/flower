@@ -2,7 +2,9 @@ configs:
   # Jeedom Info
   jeedom_ip: "1.1.1.1"
   jeedom_api_key: "XXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
-  
+  jeedom_start_id: 1
+  jeedom_stop_id: 2
+
   # Flowers to collect
   flowers: ["flower_1", "flower_2"]
 

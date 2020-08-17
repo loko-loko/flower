@@ -15,26 +15,30 @@ class JeedomApi():
         log.info(f"[jeedom] Execution of action: {action_name} [Scenario ID: {action_id}]")
         request = f"{self._endpoint}&type=scenario&id={action_id}&action=start"
         log.debug(f"[jeedom] Send request: {self._format_url_request(request)}")
-        result = requests.get(request)
-        if result.text != "ok":
+        try:
+            request = requests.get(request)
+        except Exception as e:
+            log.error(f"[jeedom] Problem during request from {self._format_url_request(request)}")
+            exit(1)
+        if request.text != "ok":
             log.error(f"[jeedom] Problem with action: {action_name} [{action_id}]")
             exit(1)
 
-    def spray_execution(self, start_id, stop_id, spray_time=20):
-        # Start spray
-        log.info(f"[spray] Starting action")
+    def watering_execution(self, start_id, stop_id, watering_time=20):
+        # Start watering
+        log.info(f"[watering] Starting action")
         self._action_scenario(
             action_id=start_id,
-            action_name="Starting spray"
+            action_name="Starting watering"
         )
         # Waiting
-        log.info(f"[spray] Waiting {spray_time}s ..")
-        time.sleep(spray_time)
-        # Stop spray
-        log.info(f"[spray] Stopping action")
+        log.info(f"[watering] Waiting {watering_time}s ..")
+        time.sleep(watering_time)
+        # Stop watering
+        log.info(f"[watering] Stopping action")
         self._action_scenario(
             action_id=stop_id,
-            action_name="Stopping spray"
+            action_name="Stopping watering"
         )
 
     @property

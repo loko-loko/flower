@@ -1,10 +1,10 @@
 from setuptools import setup
 
 setup(
-    name="jeedom-flower-spray",
+    name="jeedom-flower-watering",
     version="1.0.0",
-    description="Jeedom Flower Water Spray",
-    url="https://github.com/loko-loko/jeedom-flower-spray.git",
+    description="Watering using Jeedom and get moisture level from Mi Flower Exporter",
+    url="https://github.com/loko-loko/jeedom-flower-watering.git",
     author="loko-loko",
     author_email="loko-loko@github.com",
     classifiers=[
@@ -12,7 +12,7 @@ setup(
         "Programming Language :: Python :: 3.6",
         "Programming Language :: Python :: 3.8",
     ],
-    packages=["jeedom_flower_spray"],
+    packages=["jeedom_flower_watering"],
     include_package_data=True,
     install_requires=[
         "requests",
@@ -21,7 +21,7 @@ setup(
     ],
     entry_points={
         "console_scripts": [
-            "jeedom-flower-spray=jeedom_flower_spray.__main__:main",
+            "jeedom-flower-watering=jeedom_flower_watering.__main__:main",
         ]
     },
 )
