@@ -17,7 +17,7 @@ setup(
     install_requires=[
         "requests",
         "loguru==0.5.0",
-        "PyYAML==5.3.1"
+        "PyYAML==5.4"
     ],
     entry_points={
         "console_scripts": [
